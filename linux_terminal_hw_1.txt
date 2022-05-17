@@ -1,0 +1,140 @@
+1) Посмотреть где я - pwd
+
+2) Создать папку - mkdir Homework_QA_29_free
+
+3) Зайти в папку - cd Homework_QA_29_free/
+
+4) Создать 3 папки -  
+mkdir HW1
+mkdir HW2
+mkdir HW3
+
+5) Зайти в любую папку -  cd HW1
+
+6) Создать 5 файлов (3 txt, 2 json)
+$ touch file_1.txt
+$ touch file_2.txt
+$ touch file_3.txt
+$ touch file_4.json
+$ touch file_5.json
+
+7) Создать 3 папки
+$ mkdir Catalog_1
+$ mkdir Catalog_2
+
+8. Вывести список содержимого папки - ls -la
+
+9) + Открыть любой txt файл - vi file_1.txt
+
+10) + написать туда что-нибудь, любой текст. - i
+
+11) + сохранить и выйти. - :wq
+
+12) Выйти из папки на уровень выше -  cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv file_1.txt file_2.txt file_3.txt Catalog_1
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+ cp file_1.txt file_2.txt file_3.txt ../ - */скопировал на уровень выше/*
+
+15) Найти файл по имени
+find ./ -name 'file_4.json'
+./HW1/file_4.json
+
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+$ grep 'циферки' c:/Users/Владимир/Homework_QA_29_free/HW1/file_1.txt
+1234 - циферки
+
+17) вывести несколько первых строк из текстового файла
+$ head -3 c:/Users/Владимир/Homework_QA_29_free/HW1/file_3.txt
+macOS (/ˌmækoʊˈɛs/;[8] previously Mac OS X and later OS X) is a Unix-like operating system developed and marketed by Apple Inc. since 2001. It is the primary operating system for Apple's Mac computers. Within the market of desktop and laptop computers it is the second most widely used desktop OS, after Microsoft Windows and ahead of Chrome OS.
+
+macOS succeeded the classic Mac OS, a Macintosh operating system with nine releases from 1984 to 1999. During this time, Apple cofounder Steve Jobs had left Apple and started another company, NeXT, developing the NeXTSTEP platform that would later be acquired by Apple to form the basis of macOS.
+
+
+
+18) вывести несколько последних строк из текстового файла
+$ tail -2 c:/Users/Владимир/Homework_QA_29_free/HW1/file_3.txt
+
+macOS has supported three major processor architectures, beginning with PowerPC-based Macs in 1999. In 2006, Apple transitioned to the Intel architecture with a line of Macs using Intel Core processors. In 2020, Apple began the Apple silicon transition, using self-designed, 64-bit ARM-based Apple M1 processors on the latest Macintosh computers.
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+$ less c:/Users/Владимир/Homework_QA_29_free/HW1/file_2.txt
+Изученно:
+Стрелка вверх – перемещение на одну строку вверх
+Стрелка вниз – перемещение на одну строку вниз
+Пробел или PgDn – перемещение на одну страницу вниз
+b или PgUp – переместить на одну страницу вверх
+g – переместить в начало файла
+G – переместить в конец файла
+ng – перейти на n-ю строку
+
+20) вывести дату и время
+$ date
+Thu Apr 14 14:12:44 RTZ 2022
+
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+Владимир@DESKTOP-P4AB69P MINGW64 ~
+$  curl http://162.55.220.72:5005/terminal-hw-request
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   237  100   237    0     0   1455      0 --:--:-- --:--:-- --:--:--  1462{"Intro":"Hello!! This is your the first response from server","Tasks":{"Task_1":"Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)","result":["Your_String","Your_number"]}}
+
+
+Владимир@DESKTOP-P4AB69P MINGW64 ~
+$  curl 'http://162.55.220.72:5005/get_method?name=Vladimir&age=38'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    18  100    18    0     0    108      0 --:--:-- --:--:-- --:--:--   109["Vladimir","38"]
+
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+Владимир@DESKTOP-P4AB69P MINGW64 ~/Homework_QA_29_free
+$ nano myscript1.sh - сделал скрипт
+вот такой вот:
+#!/bin/bash 
+cd c:/Users/Владимир/Homework_QA_29_free/ - пункт 3
+mkdir 1_test 2_test 3_test - пункт 4
+cd c:/Users/Владимир/Homework_QA_29_free/1_test/ - пункт 5
+touch f1.txt f2.txt f3.txt f4.json f5.json - пункт 6
+mkdir 1_1_test 2_2_test 3_3_test  - пункт 7
+ls -la - пункт 8
+mv f4.json f5.json c:/Users/Владимир/Homework_QA_29_free/2_test
+-	пункт 13
+
+Владимир@DESKTOP-P4AB69P MINGW64 ~/Homework_QA_29_free
+$ bash myscript1.sh - запустил скрипт
+total 8
+drwxr-xr-x 1 Владимир 197121 0 Apr 16 01:28 .
+drwxr-xr-x 1 Владимир 197121 0 Apr 16 01:28 ..
+drwxr-xr-x 1 Владимир 197121 0 Apr 16 01:28 1_1_test
+drwxr-xr-x 1 Владимир 197121 0 Apr 16 01:28 2_2_test
+drwxr-xr-x 1 Владимир 197121 0 Apr 16 01:28 3_3_test
+-rw-r--r-- 1 Владимир 197121 0 Apr 16 01:28 f1.txt
+-rw-r--r-- 1 Владимир 197121 0 Apr 16 01:28 f2.txt
+-rw-r--r-- 1 Владимир 197121 0 Apr 16 01:28 f3.txt
+-rw-r--r-- 1 Владимир 197121 0 Apr 16 01:28 f4.json
+-rw-r--r-- 1 Владимир 197121 0 Apr 16 01:28 f5.json
+
+
+
+По итогу 2 файла оказались в указанном в последней строке скрипта каталоге
+Владимир@DESKTOP-P4AB69P MINGW64 ~/Homework_QA_29_free
+$ cd 2_test
+
+Владимир@DESKTOP-P4AB69P MINGW64 ~/Homework_QA_29_free/2_test
+$ ls -la
+total 4
+drwxr-xr-x 1 Владимир 197121 0 Apr 16 01:28 ./
+drwxr-xr-x 1 Владимир 197121 0 Apr 16 01:28 ../
+-rw-r--r-- 1 Владимир 197121 0 Apr 16 01:28 f4.json
+-rw-r--r-- 1 Владимир 197121 0 Apr 16 01:28 f5.json
+
