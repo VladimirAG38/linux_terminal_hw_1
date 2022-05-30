@@ -4,10 +4,7 @@
 
 3) Зайти в папку - cd Homework_QA_29_free/
 
-4) Создать 3 папки -  
-mkdir HW1
-mkdir HW2
-mkdir HW3
+4) Создать 3 папки -  mkdir HW1 HW2 HW3
 
 5) Зайти в любую папку -  cd HW1
 
